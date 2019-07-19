@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+      <script src="javascripts/excel/shim.js"></script>
+      <script src="javascripts/moment.min.js"></script>
+      <script src="javascripts/excel/xlsx.full.min.js"></script>      
+      <script src="javascripts/excel/FileSaver.js"></script>      
+      <script src="javascripts/excel/Blob.js"></script>      
+    <style>
+      
+    </style>
+  </head>
+  <body ng-app="myApp" ng-controller="mainController">
+      <header>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+          <div class="container d-flex justify-content-between">
+            <span class="navbar-brand d-flex align-items-center">                
+              <strong>Obtener datos de DRIPROMAS</strong>
+            </span>   
+          </div>
+        </div>
+      </header>
+      <div style="margin: 10px">          
+          <div class="row">
+            <br/>
+            <div class="col-md-6 mb-3">
+              <button ng-click="iniciarProceso()">Iniciar proceso</button>
+            </div>
+          </div>
+          <div class="row">              
+            <div class="col-md-12">
+              <table class="table table-striped table-sm" id="data-table">
+                <thead>
+                  <tr>
+                    <th>Titulo</th>
+                    <th>Codigo</th>
+                    <th>Descripcion</th>
+                    <th>Imagen</th>                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="articulo in articulos">
+                    <td>{{articulo.titulo}}</td>
+                    <td>{{articulo.codigo}}</td>
+                    <td>{{articulo.descripcion}}</td>
+                    <td>{{articulo.urlImagen}}</td>                    
+                  </tr>
+                </tbody>
+              </table>    
+            </div>
+          </div>
+
+      </div>
+
+  </body>
+  <script src="javascripts/main.js"></script>
+</html>
